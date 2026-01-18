@@ -1,9 +1,9 @@
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 const JobAnalyse = require('./model/job-analyse.model');
 
-require('dotenv').config();
-GEMINI_API_KEY = 'AIzaSyB2ubYF8EsPmKWuPz7ObwnuIn5qfVFU8eM'
-console.log("Checking API Key availability:", process.env.GEMINI_API_KEY ? "Key Found" : "Key MISSING");
+// Environment variables are loaded in app.js. Read the API key from process.env here.
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+console.log("Checking API Key availability:", GEMINI_API_KEY ? "Key Found" : "Key MISSING");
 
 const genAI = new GoogleGenerativeAI(GEMINI_API_KEY);
 
